@@ -4,7 +4,9 @@ def game_logic():
     a = list(" 123456789") 
     i = 0  
     vic = False
-
+    jou1=input("entrez le nom du premier joueur (symbole x):")
+    jou2=input("entrer le nom du deuxieme joueur (symbole o):")
+    m=jou1
     while i < 9:
         print("\n")
         print("\t     |     |")
@@ -20,17 +22,13 @@ def game_logic():
 
         if vic:  
             break
-
+        print("tour de ",m)
         h = input("Entrez la case souhaitée (1-9): ")
 
         if h not in "123456789":
             print("caractere non valide, entrez un caractere compris entre 12345679")
         else:
             k=int(h)
-        if k < 1 or k > 9:
-            print("Entrez un numéro de case valide (1-9).")
-            continue
-
        
         if str(k) in b:
             print("Case déjà utilisée.")
@@ -38,9 +36,11 @@ def game_logic():
             if tour:  
                 a[k] = "x"
                 tour = False  
+                m=jou2
             else:  
                 a[k] = "o"
                 tour = True  
+                m=jou1
             b.append(str(k))  
             i += 1  
 
@@ -52,8 +52,12 @@ def game_logic():
             a[2] == a[5] == a[8] != " " or  
             a[3] == a[6] == a[9] != " " or  
             a[1] == a[5] == a[9] != " " or 
-            a[3] == a[5] == a[7] != " "):   
-            print("Victoire !")
+            a[3] == a[5] == a[7] != " "):  
+            if m==jou1:
+                m=jou2
+            else:
+                m=jou1 
+            print("Victoire de ",m," !")
             vic = True
 
         elif i == 9:
