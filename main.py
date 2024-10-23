@@ -3,7 +3,7 @@ def game_logic():
     tour = True  
     a = list(" 123456789") 
     i = 0  
-    vic = False  
+    vic = False
 
     while i < 9:
         print("\n")
@@ -21,9 +21,12 @@ def game_logic():
         if vic:  
             break
 
-        k = int(input("Entrez la case souhaitée (1-9): "))
+        h = input("Entrez la case souhaitée (1-9): ")
 
-        
+        if h not in "123456789":
+            print("caractere non valide, entrez un caractere compris entre 12345679")
+        else:
+            k=int(h)
         if k < 1 or k > 9:
             print("Entrez un numéro de case valide (1-9).")
             continue
