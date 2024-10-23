@@ -1,13 +1,15 @@
+player_1=input("entrez le nom du premier joueur (symbole x):")
+player_2=input("entrer le nom du deuxieme joueur (symbole o):")
+
 def game_logic(): 
-    b = list()  
-    tour = True  
-    a = list(" 123456789") 
-    i = 0  
-    vic = False
-    jou1=input("entrez le nom du premier joueur (symbole x):")
-    jou2=input("entrer le nom du deuxieme joueur (symbole o):")
-    m=jou1
-    while i < 9:
+ b = list()  
+ turn = True  
+ a = list(" 123456789") 
+ i = 0  
+ victory = False
+ player_turn=player_1
+
+ while i < 9:
         print("\n")
         print("\t     |     |")
         print(f"\t {a[7]}   |  {a[8]}  |  {a[9]}") 
@@ -20,27 +22,27 @@ def game_logic():
         print("\t     |     |")
         print("\n")
 
-        if vic:  
+        if victory:  
             break
-        print("tour de ",m)
-        h = input("Entrez la case souhaitée (1-9): ")
+        print("tour de ",player_turn)
+        player_moove = input("Entrez la case souhaitée (1-9): ")
 
-        if h not in "123456789":
+        if player_moove not in "123456789":
             print("caractere non valide, entrez un caractere compris entre 12345679")
         else:
-            k=int(h)
+            k=int(player_moove)
        
         if str(k) in b:
             print("Case déjà utilisée.")
         else:
-            if tour:  
+            if turn:  
                 a[k] = "x"
-                tour = False  
-                m=jou2
+                turn = False  
+                player_turn=player_1
             else:  
                 a[k] = "o"
-                tour = True  
-                m=jou1
+                turn = True  
+                player_turn=player_2
             b.append(str(k))  
             i += 1  
 
@@ -53,16 +55,18 @@ def game_logic():
             a[3] == a[6] == a[9] != " " or  
             a[1] == a[5] == a[9] != " " or 
             a[3] == a[5] == a[7] != " "):  
-            if m==jou1:
-                m=jou2
+            if player_turn==player_1:
+                player_turn=player_2
             else:
-                m=jou1 
-            print("Victoire de ",m," !")
-            vic = True
+                player_turn=player_1 
+            print("Victoire de ",player_turn," !")
+            victory = True
 
         elif i == 9:
             print("Match nul.")
             break
 
-game_logic()
+def gamestart(n):
+    for i in range(n):
 
+gamestart(int(input("nombre de games")))
