@@ -50,7 +50,7 @@ def game_logic():
             a[3] == a[6] == a[9] != " " or  
             a[1] == a[5] == a[9] != " " or 
             a[3] == a[5] == a[7] != " "):   
-            print("Victoire !")
+            print("Victoire !") 
             vic = True
 
         elif i == 9:
