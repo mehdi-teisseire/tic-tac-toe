@@ -3,7 +3,7 @@ A tic-tac-toe game made by
     Mehdi TEISSEIRE
     Trajan LETROSNE
 
-Completly working in VSconsole or python
+Completly working in VSconsole
 
 Require Python
 
