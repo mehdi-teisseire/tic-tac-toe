@@ -422,26 +422,14 @@ def third_shot():
 def deuxieme_coup():
     global booleen
     if a[1]=="o" and a[2]==a[3]==" ":
-        # n_random =randint(0,1)
-        # if n_random==1:
-        #     a[2]="o"
-        # else:
         a[3]="o"
         booleen=False
         used_a.append(str(3))
     elif a[4]=="o" and a[6]==" "==a[5]:
-        # n_random =randint(0,1)
-        # if n_random==1:
-        #     a[5]="o"
-        # else:
         a[6]="o"
         booleen=False
         used_a.append(str(6))
     elif a[7]=="o" and a[9]==" "==a[8]:
-        # n_random =randint(0,1)
-        # if n_random==1:
-        #     a[7]="o"
-        # else:
         a[9]="o"
         booleen=False
         used_a.append(str(9))
@@ -476,10 +464,6 @@ def deuxieme_coup():
             booleen=False
             used_a.append(str(7))
     elif a[1]=="o" and a[7]==" "==a[4]:
-        # n_random =randint(0,1)
-        # if n_random==1:
-        #     a[4]="o"
-        # else:
         a[7]="o"
         booleen=False
         used_a.append(str(7))
@@ -566,10 +550,6 @@ def deuxieme_coup():
             booleen=False
             used_a.append(str(3))
     elif a[3]=="o" and a[7]==" "==a[5]:
-        # n_random =randint(0,1)
-        # if n_random==1:
-        #     a[5]="o"
-        # else:
             a[7]="o"
             booleen=False
             used_a.append(str(7))
